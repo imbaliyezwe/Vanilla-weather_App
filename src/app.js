@@ -47,8 +47,8 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "f4atf75e2b3aeb047878efob6ee10f18";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=f4atf75e2b3aeb047878efob6ee10f18&units=metric`;
+  let apiKey = "f4atf75e2b3aeb047878ef0b6ee10f18";
+    let apiUrl = 'https://api.shecodes.io/weather/v1/current?q=${johannesburg}&appid=${apiKey}';
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -87,4 +87,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("New York");
+search("johannesburg");
