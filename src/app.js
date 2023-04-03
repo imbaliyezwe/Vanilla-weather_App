@@ -37,6 +37,7 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
 }
 
+
 function searchCity(city) {
   let apiKey = "6e6ec494746b5229a9f2d526478c924c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -72,6 +73,17 @@ function convertToCelsius(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = 19;
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
