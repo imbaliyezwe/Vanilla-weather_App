@@ -31,6 +31,10 @@ li {
     border-radius: 10px;
     max-width: 600px;
 }
+.weather-app-wrapper {
+    max-width: 600px;
+    margin: 30px auto;
+}
 
 .weather-icon {
     height: 64px;
