@@ -41,14 +41,14 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getForecast(coordinates) {
   let apiKey = "f4atf75e2b3aeb047878efob6ee10f18";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${-9.13333}&lat=${38.71667}&key=${f4atf75e2b3aeb047878efob6ee10f18}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
